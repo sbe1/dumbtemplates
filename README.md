@@ -13,3 +13,6 @@ http://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/common
 
 See the Javadoc for more info on using Dumbtemplates.
 
+DEPENDENCIES: All dependencies should be handled properly by he pom.xml file, except the Javatools dependency.
+You'll probably have to checkout and build a jar of my Javatools to satisfy that dependency.
+https://github.com/sbe1/javatools
