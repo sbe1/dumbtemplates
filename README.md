@@ -18,14 +18,14 @@ You'll probably have to checkout and build a jar of my Javatools to satisfy that
 https://github.com/sbe1/javatools
 
 
-Example
+Example:
 
 public static final DumbtemplateCollection templates = new DumbtemplateCollection();
-
 
 /* The data argument below is a Map<String,Object> of variables whose keys will be matched by StrSubstitutor to
 ${placeholders} in the template file home_page.html and return the entire processed template page
 as a string.
 */
+
 final String myView = Dumbtemplate.processTemplate(templates.getTemplate("home_page"), data);
 
