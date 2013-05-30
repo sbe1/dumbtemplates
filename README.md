@@ -22,7 +22,7 @@ Example:
 
 public static final DumbtemplateCollection templates = new DumbtemplateCollection();
 
-/* The data argument below is a Map<String,Object> of variables whose keys will be matched by StrSubstitutor to
+/* The data argument below is a Map&lt;String,Object&gt; of variables whose keys will be matched by StrSubstitutor to
 ${placeholders} in the template file home_page.html and return the entire processed template page
 as a string.
 */
