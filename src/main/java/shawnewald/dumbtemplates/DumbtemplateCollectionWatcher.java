@@ -32,6 +32,7 @@ public abstract class DumbtemplateCollectionWatcher extends TimerTask {
     for (final File f : Dumbtemplate.getTemplateFiles(DumbtemplateConfig.templatePath)) {
         if (f.lastModified() > timestamp) {
             onChange();
+            break;
         }
     }
   }
