@@ -41,5 +41,5 @@ public class DumbtemplateConfig {
 
     }
     // just a quick and dirty way to preload the templates.
-    public static final DumbtemplateCollection templates = DumbtemplateCollection.getInstance();
+    //public static final DumbtemplateCollection templates = DumbtemplateCollection.getInstance();
 }
