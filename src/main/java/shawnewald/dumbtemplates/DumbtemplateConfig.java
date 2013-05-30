@@ -24,8 +24,6 @@ import org.shawnewald.javatools.Prop;
  *
  */
 public class DumbtemplateConfig {
-    // application constants
-    public static final String ZERO = "0";
 
     // dumbtemplate.properties values
     public static final String templatePath;
@@ -36,7 +34,7 @@ public class DumbtemplateConfig {
         final Properties props = Prop.getFromClasspath("dumbtemplate.properties");
         templatePath = props.getProperty("templatePath");
         watchTemplateChanges = (props.getProperty("watchTemplateChanges") == null
-                || props.getProperty("watchTemplateChanges").equals(ZERO)) ? false : true;
+                || props.getProperty("watchTemplateChanges").equals("0")) ? false : true;
         templateCheckInterval = Integer.parseInt(props.getProperty("templateCheckInterval"));
 
     }
