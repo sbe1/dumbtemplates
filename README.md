@@ -22,7 +22,7 @@ Example 1 - process a template:
 
     public static final DumbtemplateCollection templates = new DumbtemplateCollection.getInstance();
 
-    /* The data argument below is a Map&lt;String,Object&gt; of variables whose keys will be matched by StrSubstitutor to
+    /* The data argument below is a Map<String,Object> of variables whose keys will be matched by StrSubstitutor to
     ${placeholders} in the template file home_page.html and return the entire processed template page
     as a string.
     */
@@ -33,7 +33,7 @@ Example 2 - template looping:
 
     public static final DumbtemplateCollection templates = new DumbtemplateCollection.getInstance();
 
-    /* The loopValues argument below is a List&lt;Map&lt;String,Object&gt;&gt; of table row data that will be looped through by the doLoop() method
+    /* The loopValues argument below is a List<Map<String,Object>> of table row data that will be looped through by the doLoop() method
     and return a String containing all processed rows. The "table_row_template" is an HTML snippet that contains the HTML for a single table row
     and the StrSubstitutor ${placeholders} which will be used to build each row of the table. */
     final String tableData = Template.doLoop(loopValues, templates.getTemplate("table_row_template"));
