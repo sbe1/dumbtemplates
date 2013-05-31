@@ -19,7 +19,7 @@ https://github.com/sbe1/javatools
 
 
 Example 1 - process a template:
-
+<code>
 public static final DumbtemplateCollection templates = new DumbtemplateCollection.getInstance();
 
 /* The data argument below is a Map&lt;String,Object&gt; of variables whose keys will be matched by StrSubstitutor to
@@ -28,10 +28,10 @@ as a string.
 */
 
 final String myView = Dumbtemplate.processTemplate(templates.getTemplate("home_page"), data);
-
+</code>
 
 Example 2 - template looping:
-
+<code>
 public static final DumbtemplateCollection templates = new DumbtemplateCollection.getInstance();
 
 
@@ -53,3 +53,4 @@ templateValues.put("title","My Page");
 templateValues.put("tableData", tableData);
 
 final String myView = Dumbtemplate.processTemplate(templates.getTemplate("my_page"), templateValues);
+</code>
