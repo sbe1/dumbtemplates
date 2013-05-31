@@ -19,38 +19,37 @@ https://github.com/sbe1/javatools
 
 
 Example 1 - process a template:
-<code>
-public static final DumbtemplateCollection templates = new DumbtemplateCollection.getInstance();
 
-/* The data argument below is a Map&lt;String,Object&gt; of variables whose keys will be matched by StrSubstitutor to
-${placeholders} in the template file home_page.html and return the entire processed template page
-as a string.
-*/
+    public static final DumbtemplateCollection templates = new DumbtemplateCollection.getInstance();
 
-final String myView = Dumbtemplate.processTemplate(templates.getTemplate("home_page"), data);
-</code>
+    /* The data argument below is a Map&lt;String,Object&gt; of variables whose keys will be matched by StrSubstitutor to
+    ${placeholders} in the template file home_page.html and return the entire processed template page
+    as a string.
+    */
+
+    final String myView = Dumbtemplate.processTemplate(templates.getTemplate("home_page"), data);
+
 
 Example 2 - template looping:
-<code>
-public static final DumbtemplateCollection templates = new DumbtemplateCollection.getInstance();
+
+    public static final DumbtemplateCollection templates = new DumbtemplateCollection.getInstance();
 
 
-/* The loopValues argument below is a List&lt;Map&lt;String,Object&gt;&gt; of table row data that will be looped through by the doLoop() method
-and return a String containing all processed rows. The "table_row_template" is an HTML snippet that contains the HTML for a single table row
-and the StrSubstitutor ${placeholders} which will be used to build each row of the table. */
+    /* The loopValues argument below is a List&lt;Map&lt;String,Object&gt;&gt; of table row data that will be looped through by the doLoop() method
+    and return a String containing all processed rows. The "table_row_template" is an HTML snippet that contains the HTML for a single table row
+    and the StrSubstitutor ${placeholders} which will be used to build each row of the table. */
 
-final String tableData = Template.doLoop(loopValues, templates.getTemplate("table_row_template"));
+    final String tableData = Template.doLoop(loopValues, templates.getTemplate("table_row_template"));
 
 
-// create a Map of values for the main template.
+    // create a Map of values for the main template.
 
-final Map<String, Object> templateValues = new HashMap();
+    final Map<String, Object> templateValues = new HashMap();
 
-templateValues.put("title","My Page");
+    templateValues.put("title","My Page");
 
-// add processed table rows as a template variable.
+    // add processed table rows as a template variable.
 
-templateValues.put("tableData", tableData);
+    templateValues.put("tableData", tableData);
 
-final String myView = Dumbtemplate.processTemplate(templates.getTemplate("my_page"), templateValues);
-</code>
+    final String myView = Dumbtemplate.processTemplate(templates.getTemplate("my_page"), templateValues);
