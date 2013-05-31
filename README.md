@@ -42,7 +42,6 @@ Example 2 - template looping:
     // create a Map of values for the main template.
     final Map<String, Object> templateValues = new HashMap();
     templateValues.put("title","My Page");
-
     // add processed table rows as a template variable.
     templateValues.put("tableData", tableData);
 
