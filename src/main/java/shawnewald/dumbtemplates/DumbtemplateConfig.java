@@ -23,8 +23,8 @@ import org.shawnewald.javatools.Prop;
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  */
-public class DumbtemplateConfig {
-
+public final class DumbtemplateConfig {
+    private DumbtemplateConfig () {}
     // dumbtemplate.properties values
     public static final String templatePath;
     public static final Boolean watchTemplateChanges;
