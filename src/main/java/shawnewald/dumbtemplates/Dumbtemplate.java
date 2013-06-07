@@ -47,9 +47,11 @@ public final class Dumbtemplate {
             try {
                 LOG.debug("Creating template map.");
                 for (final File file : listOfFiles) {
-                    final String name = file.getName().toLowerCase().replace(litHtml, litEmpty);
-                    templates.put(name, Txt.streamToString(new FileInputStream(file),true));
-                    LOG.debug("Added template: "+name);
+                    if (file.isFile()) {
+                        final String name = file.getName().toLowerCase().replace(litHtml, litEmpty);
+                        templates.put(name, Txt.streamToString(new FileInputStream(file),true));
+                        LOG.debug("Added template: "+name);
+                    }
                 }
             }
             catch (final Exception e) { LOG.error(e); }
