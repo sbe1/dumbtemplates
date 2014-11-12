@@ -2,8 +2,7 @@ Dumbtemplates
 ==============
 
 Super simple "dumb" templating system for Java that exploits the wonderfully simple org.apache.commons.lang3.text.StrSubstitutor class.
-Edit your dumbtemplate.properties file to point to your .html template files (template files should have an .html extension or no extension)
-and use Dumbtemplates convenience methods to roll your own MVC framework. While Dumbtemplates is dead simple, it also supports
+Edit your dumbtemplate.properties file to point to your template files and use Dumbtemplates convenience methods to roll your own MVC framework. While Dumbtemplates is dead simple, it also supports
 auto-reloading of your templates when new files are uploaded or existing files are updated.
 
 Dumbtemplates is super lightweight and efficient and assumes you know what you're doing.
