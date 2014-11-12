@@ -32,7 +32,6 @@ import org.shawnewald.javatools.Txt;
  */
 public final class Dumbtemplate {
     private static final Logger LOG = Logger.getLogger(Dumbtemplate.class);
-    private static final String litHtml = ".html";
     private static final String litEmpty = "";
 
     private Dumbtemplate () {}
@@ -48,7 +47,7 @@ public final class Dumbtemplate {
                 LOG.debug("Creating template map.");
                 for (final File file : listOfFiles) {
                     if (file.isFile()) {
-                        final String name = file.getName().toLowerCase().replace(litHtml, litEmpty);
+                        final String name = file.getName().toLowerCase().replace(DumbtemplateConfig.templateExt, litEmpty);
                         templates.put(name, Txt.streamToString(new FileInputStream(file),true));
                         LOG.debug("Added template: "+name);
                     }

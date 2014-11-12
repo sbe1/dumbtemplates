@@ -1,5 +1,6 @@
 package shawnewald.dumbtemplates;
 
+import java.io.File;
 import java.util.Properties;
 import org.shawnewald.javatools.Prop;
 
@@ -27,12 +28,20 @@ public final class DumbtemplateConfig {
     private DumbtemplateConfig () {}
     // dumbtemplate.properties values
     public static final String templatePath;
+    public static final String templateExt;
     public static final Boolean watchTemplateChanges;
     public static final int templateCheckInterval;
 
     static {
-        final Properties props = Prop.getFromClasspath("dumbtemplate.properties");
+        // Check for a properties file provided as a system property value.
+        // Ex.: java -jar myapp.jar -DdtConfig=/path/to/dumbtemplate.properties
+        final String dtConfig = System.getProperty("dtConfig");
+        // If dtConfig property is not found or is empty, use default properties file. 
+        final Properties props = (dtConfig == null || dtConfig == "")
+                ? Prop.getFromClasspath("dumbtemplate.properties")
+                : Prop.getFromFile(new File(dtConfig));
         templatePath = props.getProperty("templatePath");
+        templateExt = props.getProperty("templateExt");
         watchTemplateChanges = (props.getProperty("watchTemplateChanges") == null
                 || props.getProperty("watchTemplateChanges").equals("0")) ? false : true;
         templateCheckInterval = Integer.parseInt(props.getProperty("templateCheckInterval"));
